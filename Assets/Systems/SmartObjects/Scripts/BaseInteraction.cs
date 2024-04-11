@@ -20,7 +20,7 @@ public abstract class BaseInteraction : MonoBehaviour
 
     public abstract bool CanPerform();
     public abstract void LockInteraction();
-    public abstract void Perform(MonoBehaviour performer, UnityEvent<BaseInteraction> onCompleted = null);
+    public abstract void Perform(MonoBehaviour performer, UnityAction<BaseInteraction> onCompleted = null);
     public abstract void UnlockInteraction();
 
 }

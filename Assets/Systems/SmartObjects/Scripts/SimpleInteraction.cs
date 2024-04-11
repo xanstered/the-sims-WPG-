@@ -8,7 +8,7 @@ public class SimpleInteraction : BaseInteraction
     protected class PerformerInfo
     {
         public float ElapsedTime;
-        public UnityEvent<BaseInteraction> OnCompleted;
+        public UnityAction<BaseInteraction> OnCompleted;
     }
 
     [SerializeField] protected int MaxSimulateousUsers = 1;
@@ -29,7 +29,7 @@ public class SimpleInteraction : BaseInteraction
             Debug.LogError($"Too many users have locked this interaction {_DisplayName}");
     }
 
-    public override void Perform(MonoBehaviour performer, UnityEvent<BaseInteraction> onCompleted = null)
+    public override void Perform(MonoBehaviour performer, UnityAction<BaseInteraction> onCompleted = null)
     {
         if (NumCurrentUsers <= 0)
         {
